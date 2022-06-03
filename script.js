@@ -3,8 +3,17 @@
 const getDays = (date1, date2) => {
 
     //getTime() returns days in milliseconds
-    const timeDifference = date2.getTime() - date1.getTime();
-    
+    const milliDate1 = date1.getTime();
+    const milliDate2 = date2.getTime();
+
+    //if statement to check which date comes later
+    let timeDifference;
+    if (milliDate1 > milliDate2) {
+        timeDifference = milliDate1 - milliDate2;
+    } else {
+        timeDifference = milliDate2 - milliDate1;
+    }
+
     //convert timeDifference from milliseconds to days
     return timeDifference / (1000 * 3600 * 24);
 }
